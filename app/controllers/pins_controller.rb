@@ -19,19 +19,17 @@ class PinsController < ApplicationController
 
   def create
     @pin = current_user.pins.build(pin_params)
-
-     
-        if @pin.save
-           redirect_to @pin, notice: 'Pin was successfully created.' 
+          if @pin.save
+           redirect_to @pin, notice:'Pin was successfully created.' 
         else
-           render action: 'new' 
+           render action:'new' 
         end
     end
 
   def update
    
       if @pin.update(pin_params)
-        redirect_to @pin, notice: 'Pin was successfully updated.' 
+        redirect_to @pin, notice:'Pin was successfully updated.' 
        
       else
        render action: 'edit' 
@@ -56,8 +54,8 @@ class PinsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def pin_params
-      params.require(:pin).permit(:description,:image)
+   def pin_params
+      params.require(:pin).permit(:description, :image)
     end
 
 
