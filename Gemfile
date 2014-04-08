@@ -14,11 +14,12 @@ gem 'devise','~>3.2.4'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'sqlite3'
 gem 'aws-sdk','~>1.20.0'
+
+
+group	:development, :test do
 end
 
-group :development, :test do
-
-group :production do
+group	:production do
 	gem 'pg'
 	gem 'rails_12factor'
 end
