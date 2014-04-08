@@ -12,13 +12,13 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'devise','~>3.2.4'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-gem 'aws-sdk', '~>1.38.0'
-
-group:development, :test do
-	gem 'sqlite3'
+gem 'sqlite3'
+gem 'aws-sdk','~>1.20.0'
 end
 
-group:production do
+group :development, :test do
+
+group :production do
 	gem 'pg'
 	gem 'rails_12factor'
 end
